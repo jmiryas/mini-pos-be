@@ -53,7 +53,7 @@ class PenjualanService
     {
         return DB::transaction(function () use ($data) {
 
-            $newId = AutoId::generate("PENJUALAN", "ID_NOTA", "NOTA_");
+            $newId = AutoId::generate("penjualan", "ID_NOTA", "NOTA_");
 
             $itemIds = array_column($data["items"], "kode_barang");
 

@@ -1,0 +1,1747 @@
+{
+  "info": {
+    "name": "Mini Projek BE - Postman",
+    "_postman_id": "d1e5c8b7-0000-4000-9000-abcdef123456",
+    "description": "Konversi dari Hoppscotch collection \"Mini Projek BE\" (sumber asli dilampirkan).",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://127.0.0.1:8000/api",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "Index",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {},
+        "url": {
+          "raw": "http://127.0.0.1:8000/api",
+          "protocol": "http",
+          "host": [
+            "127.0.0.1"
+          ],
+          "port": "8000",
+          "path": [
+            "api"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Barang",
+      "item": [
+        {
+          "name": "List Barang",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/items",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "items"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "List Barang",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": "{{base_url}}/items"
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "127.0.0.1:8000"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.4.13"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 10 Mar 2026 13:29:00 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                }
+              ],
+              "body": "{\n    \"success\": true,\n    \"message\": \"Success\",\n    \"data\": {\n        \"items\": [\n            { \"kode\": \"BRG_1\", \"nama\": \"PEN\", \"kategori\": \"ATK\", \"harga\": 15000 },\n            { \"kode\": \"BRG_10\", \"nama\": \"PIRING\", \"kategori\": \"RT\", \"harga\": 35000 },\n            { \"kode\": \"BRG_2\", \"nama\": \"PENSIL\", \"kategori\": \"ATK\", \"harga\": 10000 },\n            { \"kode\": \"BRG_3\", \"nama\": \"PAYUNG\", \"kategori\": \"RT\", \"harga\": 70000 },\n            { \"kode\": \"BRG_4\", \"nama\": \"PANCI\", \"kategori\": \"MASAK\", \"harga\": 110000 },\n            { \"kode\": \"BRG_5\", \"nama\": \"SAPU\", \"kategori\": \"RT\", \"harga\": 40000 },\n            { \"kode\": \"BRG_6\", \"nama\": \"KIPAS\", \"kategori\": \"ELEKTRONIK\", \"harga\": 200000 },\n            { \"kode\": \"BRG_7\", \"nama\": \"KUALI\", \"kategori\": \"MASAK\", \"harga\": 120000 },\n            { \"kode\": \"BRG_8\", \"nama\": \"SIKAT\", \"kategori\": \"RT\", \"harga\": 30000 },\n            { \"kode\": \"BRG_9\", \"nama\": \"GELAS\", \"kategori\": \"RT\", \"harga\": 25000 }\n        ],\n        \"current_page\": 1,\n        \"last_page\": 1,\n        \"total\": 10\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "List Barang with Filter",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/items?filter[kategori]=ATK",
+              "query": [
+                {
+                  "key": "filter[kategori]",
+                  "value": "ATK"
+                }
+              ],
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "items"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "List Barang with Filter",
+              "originalRequest": {
+                "method": "GET",
+                "url": "{{base_url}}/items?filter[kategori]=ATK"
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "127.0.0.1:8000"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.4.13"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 10 Mar 2026 13:47:46 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                }
+              ],
+              "body": "{\n    \"success\": true,\n    \"message\": \"Success\",\n    \"data\": {\n        \"items\": [\n            { \"kode\": \"BRG_1\", \"nama\": \"PEN\", \"kategori\": \"ATK\", \"harga\": 15000 },\n            { \"kode\": \"BRG_2\", \"nama\": \"PENSIL\", \"kategori\": \"ATK\", \"harga\": 10000 }\n        ],\n        \"current_page\": 1,\n        \"last_page\": 1,\n        \"total\": 2\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "List Barang with Sort",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/items?sort=-nama,-harga",
+              "query": [
+                {
+                  "key": "sort",
+                  "value": "-nama,-harga"
+                }
+              ],
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "items"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "List Barang with Sort",
+              "originalRequest": {
+                "method": "GET",
+                "url": "{{base_url}}/items?sort=-nama,-harga"
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "127.0.0.1:8000"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.4.13"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 10 Mar 2026 13:49:37 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                }
+              ],
+              "body": "{\n    \"success\": true,\n    \"message\": \"Success\",\n    \"data\": {\n        \"items\": [\n            { \"kode\": \"BRG_8\", \"nama\": \"SIKAT\", \"kategori\": \"RT\", \"harga\": 30000 },\n            { \"kode\": \"BRG_5\", \"nama\": \"SAPU\", \"kategori\": \"RT\", \"harga\": 40000 },\n            { \"kode\": \"BRG_10\", \"nama\": \"PIRING\", \"kategori\": \"RT\", \"harga\": 35000 },\n            { \"kode\": \"BRG_2\", \"nama\": \"PENSIL\", \"kategori\": \"ATK\", \"harga\": 10000 },\n            { \"kode\": \"BRG_1\", \"nama\": \"PEN\", \"kategori\": \"ATK\", \"harga\": 15000 },\n            { \"kode\": \"BRG_3\", \"nama\": \"PAYUNG\", \"kategori\": \"RT\", \"harga\": 70000 },\n            { \"kode\": \"BRG_4\", \"nama\": \"PANCI\", \"kategori\": \"MASAK\", \"harga\": 110000 },\n            { \"kode\": \"BRG_7\", \"nama\": \"KUALI\", \"kategori\": \"MASAK\", \"harga\": 120000 },\n            { \"kode\": \"BRG_6\", \"nama\": \"KIPAS\", \"kategori\": \"ELEKTRONIK\", \"harga\": 200000 },\n            { \"kode\": \"BRG_9\", \"nama\": \"GELAS\", \"kategori\": \"RT\", \"harga\": 25000 }\n        ],\n        \"current_page\": 1,\n        \"last_page\": 1,\n        \"total\": 10\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Tambah Barang",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"nama\": \"Buku Gambar\",\n    \"kategori\": \"ATK\",\n    \"harga\": 10000\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/items",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "items"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Tambah Barang",
+              "originalRequest": {
+                "method": "POST",
+                "url": "{{base_url}}/items",
+                "body": "{ \"nama\": \"test\", \"kategori\": \"ATK\", \"harga\": 1000 }"
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "127.0.0.1:8000"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.4.13"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 10 Mar 2026 13:41:03 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                }
+              ],
+              "body": "{\n    \"success\": true,\n    \"message\": \"Barang berhasil ditambahkan\",\n    \"data\": {\n        \"kode\": \"BRG_11\",\n        \"nama\": \"test\",\n        \"kategori\": \"ATK\",\n        \"harga\": 1000\n    }\n}"
+            },
+            {
+              "name": "Tambah Barang Err Validasi",
+              "originalRequest": {
+                "method": "POST",
+                "url": "{{base_url}}/items",
+                "body": "{}"
+              },
+              "status": "Unprocessable Content",
+              "code": 422,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "127.0.0.1:8000"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.4.13"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 10 Mar 2026 13:38:31 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                }
+              ],
+              "body": "{\n    \"success\": false,\n    \"message\": \"Data yang dikirim tidak valid.\",\n    \"errors\": {\n        \"nama\": [ \"Nama wajib diisi.\" ],\n        \"kategori\": [ \"Kategori wajib diisi.\" ],\n        \"harga\": [ \"Harga wajib diisi.\" ]\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Show Single Barang",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/items/BRG_13",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "items",
+                "BRG_13"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Show Single Barang",
+              "originalRequest": {
+                "method": "GET",
+                "url": "{{base_url}}/items/BRG_11"
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "127.0.0.1:8000"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.4.13"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 10 Mar 2026 13:42:41 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                }
+              ],
+              "body": "{\n    \"success\": true,\n    \"message\": \"Detail barang berhasil diambil\",\n    \"data\": {\n        \"kode\": \"BRG_11\",\n        \"nama\": \"test\",\n        \"kategori\": \"ATK\",\n        \"harga\": 1000\n    }\n}"
+            },
+            {
+              "name": "Show Single Barang Not Found",
+              "originalRequest": {
+                "method": "GET",
+                "url": "{{base_url}}/items/test123"
+              },
+              "status": "Not Found",
+              "code": 404,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "127.0.0.1:8000"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.4.13"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 10 Mar 2026 13:42:23 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                }
+              ],
+              "body": "{\n    \"success\": false,\n    \"message\": \"Data atau Endpoint tidak ditemukan.\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Edit Barang",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"nama\": \"Penghapus\",\n    \"harga\": 2500\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/items/BRG_13",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "items",
+                "BRG_13"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Edit Barang",
+              "originalRequest": {
+                "method": "PATCH",
+                "url": "{{base_url}}/items/BRG_11",
+                "body": "{ \"nama\": \"Pulpen\" }"
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "127.0.0.1:8000"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.4.13"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 10 Mar 2026 13:43:40 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                }
+              ],
+              "body": "{\n    \"success\": true,\n    \"message\": \"Barang berhasil diperbarui\",\n    \"data\": {\n        \"kode\": \"BRG_11\",\n        \"nama\": \"Pulpen\",\n        \"kategori\": \"ATK\",\n        \"harga\": 1000\n    }\n}"
+            },
+            {
+              "name": "Edit Barang Not Found",
+              "originalRequest": {
+                "method": "PATCH",
+                "url": "{{base_url}}/items/BRG_1100",
+                "body": "{ \"nama\": \"Pulpen\" }"
+              },
+              "status": "Not Found",
+              "code": 404,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "127.0.0.1:8000"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.4.13"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 10 Mar 2026 13:45:12 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                }
+              ],
+              "body": "{\n    \"success\": false,\n    \"message\": \"Data atau Endpoint tidak ditemukan.\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Delete Barang",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "text/plain"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "{{base_url}}/items/BRG_13",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "items",
+                "BRG_13"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Delete Barang",
+              "originalRequest": {
+                "method": "DELETE",
+                "url": "{{base_url}}/items/BRG_11"
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "127.0.0.1:8000"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.4.13"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 10 Mar 2026 13:46:52 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                }
+              ],
+              "body": "{\n    \"success\": true,\n    \"message\": \"Barang berhasil dihapus\",\n    \"data\": null\n}"
+            },
+            {
+              "name": "Delete Barang Err Sudah Terjual",
+              "originalRequest": {
+                "method": "DELETE",
+                "url": "{{base_url}}/items/BRG_7"
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "127.0.0.1:8000"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.4.13"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 10 Mar 2026 13:55:14 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                }
+              ],
+              "body": "{\n    \"success\": false,\n    \"message\": \"Barang tidak bisa dihapus karena sudah ada di riwayat penjualan.\"\n}"
+            },
+            {
+              "name": "Delete Barang Not Found",
+              "originalRequest": {
+                "method": "DELETE",
+                "url": "{{base_url}}/items/BRG_1000"
+              },
+              "status": "Not Found",
+              "code": 404,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "127.0.0.1:8000"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.4.13"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 10 Mar 2026 13:46:24 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                }
+              ],
+              "body": "{\n    \"success\": false,\n    \"message\": \"Data atau Endpoint tidak ditemukan.\"\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Pelanggan",
+      "item": [
+        {
+          "name": "List Pelanggan",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/customers",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "customers"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "List Pelanggan",
+              "originalRequest": {
+                "method": "GET",
+                "url": "{{base_url}}/customers"
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "127.0.0.1:8000"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.4.13"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 10 Mar 2026 14:27:48 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                }
+              ],
+              "body": "{\n    \"success\": true,\n    \"message\": \"Success\",\n    \"data\": {\n        \"items\": [\n            { \"id_pelanggan\": \"PELANGGAN_1\", \"nama\": \"ANDI\", \"domisili\": \"JAK-UT\", \"jenis_kelamin\": \"PRIA\" },\n            { \"id_pelanggan\": \"PELANGGAN_10\", \"nama\": \"JONNY\", \"domisili\": \"JAK-SEL\", \"jenis_kelamin\": \"WANITA\" },\n            { \"id_pelanggan\": \"PELANGGAN_2\", \"nama\": \"BUDI\", \"domisili\": \"JAK-BAR\", \"jenis_kelamin\": \"PRIA\" },\n            { \"id_pelanggan\": \"PELANGGAN_3\", \"nama\": \"JOHAN\", \"domisili\": \"JAK-SEL\", \"jenis_kelamin\": \"PRIA\" },\n            { \"id_pelanggan\": \"PELANGGAN_4\", \"nama\": \"SINTHA\", \"domisili\": \"JAK-TIM\", \"jenis_kelamin\": \"WANITA\" },\n            { \"id_pelanggan\": \"PELANGGAN_5\", \"nama\": \"ANTO\", \"domisili\": \"JAK-UT\", \"jenis_kelamin\": \"PRIA\" },\n            { \"id_pelanggan\": \"PELANGGAN_6\", \"nama\": \"BUJANG\", \"domisili\": \"JAK-BAR\", \"jenis_kelamin\": \"PRIA\" },\n            { \"id_pelanggan\": \"PELANGGAN_7\", \"nama\": \"JOWAN\", \"domisili\": \"JAK-SEL\", \"jenis_kelamin\": \"PRIA\" },\n            { \"id_pelanggan\": \"PELANGGAN_8\", \"nama\": \"SINTIA\", \"domisili\": \"JAK-TIM\", \"jenis_kelamin\": \"WANITA\" },\n            { \"id_pelanggan\": \"PELANGGAN_9\", \"nama\": \"BUTET\", \"domisili\": \"JAK-BAR\", \"jenis_kelamin\": \"WANITA\" }\n        ],\n        \"current_page\": 1,\n        \"last_page\": 1,\n        \"total\": 10\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "List Pelanggan with Filter",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/customers?filter[domisili]=JAK-SEL",
+              "query": [
+                {
+                  "key": "filter[domisili]",
+                  "value": "JAK-SEL"
+                }
+              ],
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "customers"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "List Pelanggan with Filter",
+              "originalRequest": {
+                "method": "GET",
+                "url": "{{base_url}}/customers?filter[domisili]=JAK-SEL"
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "127.0.0.1:8000"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.4.13"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 10 Mar 2026 14:31:00 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                }
+              ],
+              "body": "{\n    \"success\": true,\n    \"message\": \"Success\",\n    \"data\": {\n        \"items\": [\n            { \"id_pelanggan\": \"PELANGGAN_10\", \"nama\": \"JONNY\", \"domisili\": \"JAK-SEL\", \"jenis_kelamin\": \"WANITA\" },\n            { \"id_pelanggan\": \"PELANGGAN_3\", \"nama\": \"JOHAN\", \"domisili\": \"JAK-SEL\", \"jenis_kelamin\": \"PRIA\" },\n            { \"id_pelanggan\": \"PELANGGAN_7\", \"nama\": \"JOWAN\", \"domisili\": \"JAK-SEL\", \"jenis_kelamin\": \"PRIA\" }\n        ],\n        \"current_page\": 1,\n        \"last_page\": 1,\n        \"total\": 3\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "List Pelanggan with Sort",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/customers?sort=-nama",
+              "query": [
+                {
+                  "key": "sort",
+                  "value": "-nama"
+                }
+              ],
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "customers"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "List Pelanggan with Sort",
+              "originalRequest": {
+                "method": "GET",
+                "url": "{{base_url}}/customers?sort=-nama"
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "127.0.0.1:8000"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.4.13"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 10 Mar 2026 14:32:39 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                }
+              ],
+              "body": "{\n    \"success\": true,\n    \"message\": \"Success\",\n    \"data\": {\n        \"items\": [\n            { \"id_pelanggan\": \"PELANGGAN_8\", \"nama\": \"SINTIA\", \"domisili\": \"JAK-TIM\", \"jenis_kelamin\": \"WANITA\" },\n            { \"id_pelanggan\": \"PELANGGAN_4\", \"nama\": \"SINTHA\", \"domisili\": \"JAK-TIM\", \"jenis_kelamin\": \"WANITA\" },\n            { \"id_pelanggan\": \"PELANGGAN_7\", \"nama\": \"JOWAN\", \"domisili\": \"JAK-SEL\", \"jenis_kelamin\": \"PRIA\" },\n            { \"id_pelanggan\": \"PELANGGAN_10\", \"nama\": \"JONNY\", \"domisili\": \"JAK-SEL\", \"jenis_kelamin\": \"WANITA\" },\n            { \"id_pelanggan\": \"PELANGGAN_3\", \"nama\": \"JOHAN\", \"domisili\": \"JAK-SEL\", \"jenis_kelamin\": \"PRIA\" },\n            { \"id_pelanggan\": \"PELANGGAN_9\", \"nama\": \"BUTET\", \"domisili\": \"JAK-BAR\", \"jenis_kelamin\": \"WANITA\" },\n            { \"id_pelanggan\": \"PELANGGAN_6\", \"nama\": \"BUJANG\", \"domisili\": \"JAK-BAR\", \"jenis_kelamin\": \"PRIA\" },\n            { \"id_pelanggan\": \"PELANGGAN_2\", \"nama\": \"BUDI\", \"domisili\": \"JAK-BAR\", \"jenis_kelamin\": \"PRIA\" },\n            { \"id_pelanggan\": \"PELANGGAN_5\", \"nama\": \"ANTO\", \"domisili\": \"JAK-UT\", \"jenis_kelamin\": \"PRIA\" },\n            { \"id_pelanggan\": \"PELANGGAN_1\", \"nama\": \"ANDI\", \"domisili\": \"JAK-UT\", \"jenis_kelamin\": \"PRIA\" }\n        ],\n        \"current_page\": 1,\n        \"last_page\": 1,\n        \"total\": 10\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Tambah Pelanggan",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"nama\": \"Tony\",\n    \"domisili\": \"JAK-SEL\",\n    \"jenis_kelamin\": \"PRIA\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/customers",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "customers"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Tambah Pelanggan",
+              "originalRequest": {
+                "method": "POST",
+                "url": "{{base_url}}/customers",
+                "body": "{ \"nama\": \"test\", \"domisili\": \"jak-sel\", \"jenis_kelamin\": \"PRIA\" }"
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "127.0.0.1:8000"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.4.13"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 10 Mar 2026 14:38:31 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                }
+              ],
+              "body": "{\n    \"success\": true,\n    \"message\": \"Pelanggan berhasil ditambahkan\",\n    \"data\": {\n        \"id_pelanggan\": \"PELANGGAN_11\",\n        \"nama\": \"test\",\n        \"domisili\": \"jak-sel\",\n        \"jenis_kelamin\": \"PRIA\"\n    }\n}"
+            },
+            {
+              "name": "Tambah Pelanggan Err Validasi",
+              "originalRequest": {
+                "method": "POST",
+                "url": "{{base_url}}/customers",
+                "body": null
+              },
+              "status": "Unprocessable Content",
+              "code": 422,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "127.0.0.1:8000"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.4.13"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 10 Mar 2026 14:33:53 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                }
+              ],
+              "body": "{\n    \"success\": false,\n    \"message\": \"Data yang dikirim tidak valid.\",\n    \"errors\": {\n        \"nama\": [ \"Nama wajib diisi.\" ],\n        \"domisili\": [ \"Domisili wajib diisi.\" ],\n        \"jenis_kelamin\": [ \"Jenis kelamin wajib diisi.\" ]\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Delete Pelanggan",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/customers/PELANGGAN_14",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "customers",
+                "PELANGGAN_14"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Delete Pelanggan",
+              "originalRequest": {
+                "method": "DELETE",
+                "url": "{{base_url}}/customers/PELANGAN_1"
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "127.0.0.1:8000"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.4.13"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 10 Mar 2026 14:38:10 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                }
+              ],
+              "body": "{\n    \"success\": true,\n    \"message\": \"Pelanggan berhasil dihapus\",\n    \"data\": null\n}"
+            }
+          ]
+        },
+        {
+          "name": "Edit Pelanggan",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"nama\": \"Tony Tony Chopper\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/customers/PELANGGAN_14",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "customers",
+                "PELANGGAN_14"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Edit Pelanggan",
+              "originalRequest": {
+                "method": "PATCH",
+                "url": "{{base_url}}/customers/PELANGGAN_11",
+                "body": "{ \"nama\": \"Budi\" }"
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "127.0.0.1:8000"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.4.13"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 10 Mar 2026 14:40:09 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                }
+              ],
+              "body": "{\n    \"success\": true,\n    \"message\": \"Pelanggan berhasil diperbarui\",\n    \"data\": {\n        \"id_pelanggan\": \"PELANGGAN_11\",\n        \"nama\": \"Budi\",\n        \"domisili\": \"jak-sel\",\n        \"jenis_kelamin\": \"PRIA\"\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Show Single Pelanggan",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/customers/PELANGGAN_14",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "customers",
+                "PELANGGAN_14"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Show Single Pelanggan",
+              "originalRequest": {
+                "method": "GET",
+                "url": "{{base_url}}/customers/PELANGGAN_11"
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "127.0.0.1:8000"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.4.13"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 10 Mar 2026 14:41:05 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                }
+              ],
+              "body": "{\n    \"success\": true,\n    \"message\": \"Detail pelanggan berhasil diambil\",\n    \"data\": {\n        \"id_pelanggan\": \"PELANGGAN_11\",\n        \"nama\": \"Budi\",\n        \"domisili\": \"jak-sel\",\n        \"jenis_kelamin\": \"PRIA\"\n    }\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Penjualan",
+      "item": [
+        {
+          "name": "List Penjualan",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/transactions",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "transactions"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "List Penjualan",
+              "originalRequest": {
+                "method": "GET",
+                "url": "{{base_url}}/transactions"
+              },
+              "status": "200 OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "127.0.0.1:8000"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.4.13"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 16 Mar 2026 14:21:02 GMT"
+                }
+              ],
+              "body": "{\"success\":true,\"message\":\"Success\",\"data\":{\"items\":[{\"id_nota\":\"NOTA_1\",\"tgl\":\"2018-01-01\",\"kode_pelanggan\":\"PELANGGAN_1\",\"subtotal\":50000},{\"id_nota\":\"NOTA_11\",\"tgl\":\"2026-03-15\",\"kode_pelanggan\":\"PELANGGAN_6\",\"subtotal\":380000},{\"id_nota\":\"NOTA_12\",\"tgl\":\"2026-03-16\",\"kode_pelanggan\":\"PELANGGAN_13\",\"subtotal\":705000},{\"id_nota\":\"NOTA_2\",\"tgl\":\"2018-01-01\",\"kode_pelanggan\":\"PELANGGAN_2\",\"subtotal\":200000},{\"id_nota\":\"NOTA_3\",\"tgl\":\"2018-01-01\",\"kode_pelanggan\":\"PELANGGAN_3\",\"subtotal\":430000},{\"id_nota\":\"NOTA_4\",\"tgl\":\"2018-01-02\",\"kode_pelanggan\":\"PELANGGAN_7\",\"subtotal\":120000},{\"id_nota\":\"NOTA_5\",\"tgl\":\"2018-01-02\",\"kode_pelanggan\":\"PELANGGAN_4\",\"subtotal\":70000},{\"id_nota\":\"NOTA_6\",\"tgl\":\"2018-01-03\",\"kode_pelanggan\":\"PELANGGAN_8\",\"subtotal\":230000},{\"id_nota\":\"NOTA_7\",\"tgl\":\"2018-01-03\",\"kode_pelanggan\":\"PELANGGAN_9\",\"subtotal\":390000},{\"id_nota\":\"NOTA_8\",\"tgl\":\"2018-01-03\",\"kode_pelanggan\":\"PELANGGAN_5\",\"subtotal\":65000}],\"current_page\":1,\"last_page\":2,\"total\":11}}"
+            }
+          ]
+        },
+        {
+          "name": "List Penjualan Filter",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/transactions?filter[tgl_akhir]=2018-01-01",
+              "query": [
+                {
+                  "key": "filter[tgl_akhir]",
+                  "value": "2018-01-01"
+                }
+              ],
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "transactions"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "List Penjualan Filter",
+              "originalRequest": {
+                "method": "GET",
+                "url": "{{base_url}}/transactions?filter[tgl_akhir]=2018-01-01"
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "127.0.0.1:8000"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.4.13"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 11 Mar 2026 07:24:43 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                }
+              ],
+              "body": "{\n    \"success\": true,\n    \"message\": \"Success\",\n    \"data\": {\n        \"items\": [\n            { \"id_nota\": \"NOTA_1\", \"tgl\": \"2018-01-01\", \"kode_pelanggan\": \"PELANGGAN_1\", \"subtotal\": 50000 },\n            { \"id_nota\": \"NOTA_2\", \"tgl\": \"2018-01-01\", \"kode_pelanggan\": \"PELANGGAN_2\", \"subtotal\": 200000 },\n            { \"id_nota\": \"NOTA_3\", \"tgl\": \"2018-01-01\", \"kode_pelanggan\": \"PELANGGAN_3\", \"subtotal\": 430000 }\n        ],\n        \"current_page\": 1,\n        \"last_page\": 1,\n        \"total\": 3\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "List Penjualan Filter with Relationship",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/transactions?filter[tgl_akhir]=2018-01-01&include=pelanggan,items.barang",
+              "query": [
+                {
+                  "key": "filter[tgl_akhir]",
+                  "value": "2018-01-01"
+                },
+                {
+                  "key": "include",
+                  "value": "pelanggan,items.barang"
+                }
+              ],
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "transactions"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "List Penjualan Filter with Relationship",
+              "originalRequest": {
+                "method": "GET",
+                "url": "{{base_url}}/transactions?filter[tgl_akhir]=2018-01-01&include=pelanggan,items.barang"
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "127.0.0.1:8000"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.4.13"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 11 Mar 2026 07:26:00 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                }
+              ],
+              "body": "{\n    \"success\": true,\n    \"message\": \"Success\",\n    \"data\": {\n        \"items\": [\n            {\n                \"id_nota\": \"NOTA_1\",\n                \"tgl\": \"2018-01-01\",\n                \"kode_pelanggan\": \"PELANGGAN_1\",\n                \"subtotal\": 50000,\n                \"pelanggan\": {\n                    \"id_pelanggan\": \"PELANGGAN_1\",\n                    \"nama\": \"ANDI\",\n                    \"domisili\": \"JAK-UT\",\n                    \"jenis_kelamin\": \"PRIA\"\n                },\n                \"items\": [\n                    {\n                        \"nota\": \"NOTA_1\",\n                        \"kode_barang\": \"BRG_1\",\n                        \"qty\": 2,\n                        \"barang\": {\n                            \"kode\": \"BRG_1\",\n                            \"nama\": \"PEN\",\n                            \"kategori\": \"ATK\",\n                            \"harga\": 15000\n                        }\n                    },\n                    {\n                        \"nota\": \"NOTA_1\",\n                        \"kode_barang\": \"BRG_2\",\n                        \"qty\": 2,\n                        \"barang\": {\n                            \"kode\": \"BRG_2\",\n                            \"nama\": \"PENSIL\",\n                            \"kategori\": \"ATK\",\n                            \"harga\": 10000\n                        }\n                    }\n                ]\n            },\n            {\n                \"id_nota\": \"NOTA_2\",\n                \"tgl\": \"2018-01-01\",\n                \"kode_pelanggan\": \"PELANGGAN_2\",\n                \"subtotal\": 200000,\n                \"pelanggan\": {\n                    \"id_pelanggan\": \"PELANGGAN_2\",\n                    \"nama\": \"BUDI\",\n                    \"domisili\": \"JAK-BAR\",\n                    \"jenis_kelamin\": \"PRIA\"\n                },\n                \"items\": [\n                    {\n                        \"nota\": \"NOTA_2\",\n                        \"kode_barang\": \"BRG_6\",\n                        \"qty\": 1,\n                        \"barang\": {\n                            \"kode\": \"BRG_6\",\n                            \"nama\": \"KIPAS\",\n                            \"kategori\": \"ELEKTRONIK\",\n                            \"harga\": 200000\n                        }\n                    }\n                ]\n            },\n            {\n                \"id_nota\": \"NOTA_3\",\n                \"tgl\": \"2018-01-01\",\n                \"kode_pelanggan\": \"PELANGGAN_3\",\n                \"subtotal\": 430000,\n                \"pelanggan\": {\n                    \"id_pelanggan\": \"PELANGGAN_3\",\n                    \"nama\": \"JOHAN\",\n                    \"domisili\": \"JAK-SEL\",\n                    \"jenis_kelamin\": \"PRIA\"\n                },\n                \"items\": [\n                    {\n                        \"nota\": \"NOTA_3\",\n                        \"kode_barang\": \"BRG_4\",\n                        \"qty\": 1,\n                        \"barang\": {\n                            \"kode\": \"BRG_4\",\n                            \"nama\": \"PANCI\",\n                            \"kategori\": \"MASAK\",\n                            \"harga\": 110000\n                        }\n                    },\n                    {\n                        \"nota\": \"NOTA_3\",\n                        \"kode_barang\": \"BRG_6\",\n                        \"qty\": 1,\n                        \"barang\": {\n                            \"kode\": \"BRG_6\",\n                            \"nama\": \"KIPAS\",\n                            \"kategori\": \"ELEKTRONIK\",\n                            \"harga\": 200000\n                        }\n                    },\n                    {\n                        \"nota\": \"NOTA_3\",\n                        \"kode_barang\": \"BRG_7\",\n                        \"qty\": 1,\n                        \"barang\": {\n                            \"kode\": \"BRG_7\",\n                            \"nama\": \"KUALI\",\n                            \"kategori\": \"MASAK\",\n                            \"harga\": 120000\n                        }\n                    }\n                ]\n            }\n        ],\n        \"current_page\": 1,\n        \"last_page\": 1,\n        \"total\": 3\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "List Penjualan Sort",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/transactions?sort=-subtotal",
+              "query": [
+                {
+                  "key": "sort",
+                  "value": "-subtotal"
+                }
+              ],
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "transactions"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "List Penjualan Sort",
+              "originalRequest": {
+                "method": "GET",
+                "url": "{{base_url}}/transactions?sort=-subtotal"
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "127.0.0.1:8000"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.4.13"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 11 Mar 2026 07:26:50 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                }
+              ],
+              "body": "{\n    \"success\": true,\n    \"message\": \"Success\",\n    \"data\": {\n        \"items\": [\n            { \"id_nota\": \"NOTA_3\", \"tgl\": \"2018-01-01\", \"kode_pelanggan\": \"PELANGGAN_3\", \"subtotal\": 430000 },\n            { \"id_nota\": \"NOTA_7\", \"tgl\": \"2018-01-03\", \"kode_pelanggan\": \"PELANGGAN_9\", \"subtotal\": 390000 },\n            { \"id_nota\": \"NOTA_6\", \"tgl\": \"2018-01-03\", \"kode_pelanggan\": \"PELANGGAN_8\", \"subtotal\": 230000 },\n            { \"id_nota\": \"NOTA_2\", \"tgl\": \"2018-01-01\", \"kode_pelanggan\": \"PELANGGAN_2\", \"subtotal\": 200000 },\n            { \"id_nota\": \"NOTA_4\", \"tgl\": \"2018-01-02\", \"kode_pelanggan\": \"PELANGGAN_7\", \"subtotal\": 120000 },\n            { \"id_nota\": \"NOTA_5\", \"tgl\": \"2018-01-02\", \"kode_pelanggan\": \"PELANGGAN_4\", \"subtotal\": 70000 },\n            { \"id_nota\": \"NOTA_8\", \"tgl\": \"2018-01-03\", \"kode_pelanggan\": \"PELANGGAN_5\", \"subtotal\": 65000 },\n            { \"id_nota\": \"NOTA_1\", \"tgl\": \"2018-01-01\", \"kode_pelanggan\": \"PELANGGAN_1\", \"subtotal\": 50000 },\n            { \"id_nota\": \"NOTA_9\", \"tgl\": \"2018-01-04\", \"kode_pelanggan\": \"PELANGGAN_2\", \"subtotal\": 40000 }\n        ],\n        \"current_page\": 1,\n        \"last_page\": 1,\n        \"total\": 9\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Tambah Penjualan",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"kode_pelanggan\": \"PELANGGAN_14\",\n    \"tgl\": \"2026-03-16\",\n    \"items\": [\n        { \"kode_barang\": \"BRG_1\", \"qty\": 1 },\n        { \"kode_barang\": \"BRG_2\", \"qty\": 2 },\n        { \"kode_barang\": \"BRG_3\", \"qty\": 3 },\n        { \"kode_barang\": \"BRG_4\", \"qty\": 5 },\n        { \"kode_barang\": \"BRG_5\", \"qty\": 4 }\n    ]\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/transactions",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "transactions"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Tambah Penjualan",
+              "originalRequest": {
+                "method": "POST",
+                "url": "{{base_url}}/transactions",
+                "body": "{ \"kode_pelanggan\": \"PELANGGAN_10\", \"tgl\": \"2026-03-11\", \"items\": [...] }"
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "127.0.0.1:8000"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.4.13"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 11 Mar 2026 09:21:24 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                }
+              ],
+              "body": "{\n    \"success\": true,\n    \"message\": \"Penjualan berhasil dilakukan\",\n    \"data\": {\n        \"id_nota\": \"NOTA_10\",\n        \"tgl\": \"2026-03-11\",\n        \"kode_pelanggan\": \"PELANGGAN_10\",\n        \"subtotal\": 955000,\n        \"pelanggan\": {\n            \"id_pelanggan\": \"PELANGGAN_10\",\n            \"nama\": \"JONNY\",\n            \"domisili\": \"JAK-SEL\",\n            \"jenis_kelamin\": \"WANITA\"\n        },\n        \"items\": [ ... ]\n    }\n}"
+            },
+            {
+              "name": "Tambah Penjualan Err Validasi",
+              "originalRequest": {
+                "method": "POST",
+                "url": "{{base_url}}/transactions",
+                "body": null
+              },
+              "status": "Unprocessable Content",
+              "code": 422,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "127.0.0.1:8000"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.4.13"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 10 Mar 2026 13:38:31 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                }
+              ],
+              "body": "{\n    \"success\": false,\n    \"message\": \"Data yang dikirim tidak valid.\",\n    \"errors\": {\n        \"id_pelanggan\": [ \"Id pelanggan wajib diisi.\" ],\n        \"tgl\": [ \"Tgl wajib diisi.\" ],\n        \"items\": [ \"Items wajib diisi.\" ],\n        \"items.kode_barang\": [ \"Items.kode barang wajib diisi.\" ],\n        \"items.qty\": [ \"Items.qty wajib diisi.\" ]\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Show Single Penjualan",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/transactions/NOTA_13?include=pelanggan,items.barang",
+              "query": [
+                {
+                  "key": "include",
+                  "value": "pelanggan,items.barang"
+                }
+              ],
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "transactions",
+                "NOTA_13"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Show Single Penjualan",
+              "originalRequest": {
+                "method": "GET",
+                "url": "{{base_url}}/transactions/NOTA_10"
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "127.0.0.1:8000"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.4.13"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 12 Mar 2026 06:12:10 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                }
+              ],
+              "body": "{\n    \"success\": true,\n    \"message\": \"Detail transaksi berhasil diambil\",\n    \"data\": {\n        \"id_nota\": \"NOTA_10\",\n        \"tgl\": \"2026-03-11\",\n        \"kode_pelanggan\": \"PELANGGAN_10\",\n        \"subtotal\": 955000\n    }\n}"
+            },
+            {
+              "name": "Show Single Penjualan with Relationship",
+              "originalRequest": {
+                "method": "GET",
+                "url": "{{base_url}}/transactions/NOTA_10?include=pelanggan,items.barang"
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "127.0.0.1:8000"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.4.13"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 12 Mar 2026 06:12:10 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                }
+              ],
+              "body": "{\n    \"success\": true,\n    \"message\": \"Detail transaksi berhasil diambil\",\n    \"data\": {\n        \"id_nota\": \"NOTA_10\",\n        \"tgl\": \"2026-03-11\",\n        \"kode_pelanggan\": \"PELANGGAN_10\",\n        \"subtotal\": 955000,\n        \"pelanggan\": { \"id_pelanggan\": \"PELANGGAN_10\", \"nama\": \"JONNY\", \"domisili\": \"JAK-SEL\", \"jenis_kelamin\": \"WANITA\" },\n        \"items\": [ ... ]\n    }\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Dashboard",
+      "item": [
+        {
+          "name": "Rekap Penjualan",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/dashboard/trx/report?filter[periode_awal]=2026-03&filter[periode_akhir]=2026-03",
+              "query": [
+                {
+                  "key": "filter[periode_awal]",
+                  "value": "2026-03"
+                },
+                {
+                  "key": "filter[periode_akhir]",
+                  "value": "2026-03"
+                }
+              ],
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "dashboard",
+                "trx",
+                "report"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Rekap Penjualan",
+              "originalRequest": {
+                "method": "GET",
+                "url": "{{base_url}}/dashboard/trx/report"
+              },
+              "status": "200 OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 16 Mar 2026 14:04:12 GMT"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.4.13"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                }
+              ],
+              "body": "[{\"tahun\":2026,\"bulan\":3,\"total_penjualan\":\"1085000.00\",\"total_transaksi\":2}]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

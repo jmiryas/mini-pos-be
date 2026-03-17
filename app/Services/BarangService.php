@@ -43,7 +43,7 @@ class BarangService
 
     public function create(array $data): Barang
     {
-        $newKode = AutoId::generate('BARANG', 'KODE', 'BRG_');
+        $newKode = AutoId::generate('barang', 'KODE', 'BRG_');
 
         return Barang::create([
             'KODE' => $newKode,

@@ -37,7 +37,7 @@ class PelangganService
 
     public function create(array $data): Pelanggan
     {
-        $newId = AutoId::generate("PELANGGAN", "ID_PELANGGAN", "PELANGGAN_");
+        $newId = AutoId::generate("pelanggan", "ID_PELANGGAN", "PELANGGAN_");
 
         return Pelanggan::create([
             "ID_PELANGGAN"  => $newId,

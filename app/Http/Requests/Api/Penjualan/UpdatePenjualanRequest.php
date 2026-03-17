@@ -22,11 +22,11 @@ class UpdatePenjualanRequest extends FormRequest
     public function rules(): array
     {
         return [
-            "kode_pelanggan" => "sometimes|required|string|exists:PELANGGAN,ID_PELANGGAN",
+            "kode_pelanggan" => "sometimes|required|string|exists:pelanggan,ID_PELANGGAN",
             "tgl" => "sometimes|required|date",
 
             "items" => "sometimes|required|array|min:1",
-            "items.*.kode_barang" => "required_with:items|string|exists:BARANG,KODE",
+            "items.*.kode_barang" => "required_with:items|string|exists:barang,KODE",
             "items.*.qty" => "required_with:items|integer|min:1",
         ];
     }

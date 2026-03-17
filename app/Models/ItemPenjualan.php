@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class ItemPenjualan extends Model
 {
-    protected $table = "ITEM_PENJUALAN";
+    protected $table = "item_penjualan";
     protected $keyType = "string";
     protected $fillable = ["NOTA", "KODE_BARANG", "Qty"];
 
