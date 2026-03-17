@@ -27,7 +27,7 @@ Dokumentasi endpoint lengkap tersedia dalam format Postman Collection:
 ## Installation
 
 1. **Persiapan:**
-    - Ekstrak file projek ke folder lokal.
+    - Clone projek.
     - Buka terminal di dalam folder projek tersebut.
 
 2. **Install & Setup:**
